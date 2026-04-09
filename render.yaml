@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: escalaonibus-api
+    env: node
+    plan: free
+    buildCommand: pnpm install && pnpm build
+    startCommand: pnpm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3000
+      - key: DATABASE_URL
+        value: postgresql://neondb_owner:npg_Sx7rIvH1uWNA@ep-aged-feather-amazlq0g.c-5.us-east-1.aws.neon.tech/neondb?sslmode=require
